@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -24,8 +25,7 @@ public class User implements Serializable {
         @Column(name = "user_id")
         private   int userId;
 
-        @Column(name = "id_card")
-        private    int idCard;
+       
 
         private   String firstname;
 
@@ -38,6 +38,8 @@ public class User implements Serializable {
 
         @OneToMany(cascade = CascadeType.ALL, mappedBy="user")
         private Set<Post> Posts;
+        @OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+        private List<Notif> Notifs;
 
         @OneToMany(cascade = CascadeType.ALL, mappedBy="user")
         private Set<Comment> Comments;

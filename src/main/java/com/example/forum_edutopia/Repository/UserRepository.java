@@ -1,10 +1,10 @@
 package com.example.forum_edutopia.Repository;
 
-import com.example.forum_edutopia.entities.Upvote;
+import com.example.forum_edutopia.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<Upvote, Long> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 
 }
